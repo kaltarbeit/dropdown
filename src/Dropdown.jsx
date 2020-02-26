@@ -1,7 +1,7 @@
 import React, { Component, cloneElement } from 'react';
 import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
-import Trigger from 'rc-trigger';
+import Trigger from '@kaltarbeit/rc-trigger';
 import classNames from 'classnames';
 import placements from './placements';
 import { polyfill } from 'react-lifecycles-compat';
