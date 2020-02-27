@@ -34868,6 +34868,7 @@ var _initialiseProps = function _initialiseProps() {
   };
 
   this.onFocus = function (e) {
+    console.log('onFocus');
     _this5.fireEvents('onFocus', e);
     // incase focusin and focusout
     _this5.clearDelayTimer();
@@ -34888,6 +34889,7 @@ var _initialiseProps = function _initialiseProps() {
   };
 
   this.onBlur = function (e) {
+    console.log('onBlur');
     _this5.fireEvents('onBlur', e);
     _this5.clearDelayTimer();
     if (_this5.isBlurToHide()) {
@@ -34896,6 +34898,7 @@ var _initialiseProps = function _initialiseProps() {
   };
 
   this.onPopupFocus = function () {
+    console.log('onPopupFocus');
     _this5.clearDelayTimer();
   };
 
@@ -34905,6 +34908,8 @@ var _initialiseProps = function _initialiseProps() {
     if (e.relatedTarget && !e.relatedTarget.setTimeout && _this5._component && _this5._component.getPopupDomNode && Object(__WEBPACK_IMPORTED_MODULE_7_rc_util_es_Dom_contains__["a" /* default */])(_this5._component.getPopupDomNode(), e.relatedTarget)) {
       return;
     }
+    console.log('onPopupBlur');
+    _this5.clearDelayTimer();
     _this5.delaySetPopupVisible(false, _this5.props.blurDelay);
   };
 
