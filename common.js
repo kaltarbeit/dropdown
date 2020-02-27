@@ -34721,6 +34721,9 @@ var Trigger = function (_React$Component) {
     if (this.isFocusToShow() || this.isBlurToHide()) {
       newChildProps.onFocus = this.onFocus;
       newChildProps.onBlur = this.onBlur;
+    } else {
+      // newChildProps.onFocus = this.createTwoChains('onFocus');
+      newChildProps.onBlur = this.createTwoChains('onBlur');
     }
 
     var childrenClassName = __WEBPACK_IMPORTED_MODULE_11_classnames___default()(child && child.props && child.props.className, className);
