@@ -27,7 +27,7 @@ ReactDOM.render(
     <div style={{ height: 100 }}/>
     <div>
       <Dropdown
-        trigger={['focus']}
+        trigger={['click']}
         overlay={menu}
         animation="slide-up"
         onVisibleChange={onVisibleChange}
