@@ -34892,23 +34892,21 @@ var _initialiseProps = function _initialiseProps() {
     console.log('onBlur');
     _this5.fireEvents('onBlur', e);
     _this5.clearDelayTimer();
-    if (_this5.isBlurToHide()) {
-      _this5.delaySetPopupVisible(false, _this5.props.blurDelay);
-    }
+    _this5.delaySetPopupVisible(false, _this5.props.blurDelay);
   };
 
   this.onPopupFocus = function () {
-    console.log('onPopupFocus');
     _this5.clearDelayTimer();
   };
 
   this.onPopupBlur = function (e) {
     // https://github.com/react-component/trigger/pull/13
     // react bug?
+    console.log(e, _this5._component.getPopupDomNode(), Object(__WEBPACK_IMPORTED_MODULE_7_rc_util_es_Dom_contains__["a" /* default */])(_this5._component.getPopupDomNode(), e.relatedTarget));
+
     if (e.relatedTarget && !e.relatedTarget.setTimeout && _this5._component && _this5._component.getPopupDomNode && Object(__WEBPACK_IMPORTED_MODULE_7_rc_util_es_Dom_contains__["a" /* default */])(_this5._component.getPopupDomNode(), e.relatedTarget)) {
       return;
     }
-    console.log('onPopupBlur');
     _this5.clearDelayTimer();
     _this5.delaySetPopupVisible(false, _this5.props.blurDelay);
   };

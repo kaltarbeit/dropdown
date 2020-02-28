@@ -44,19 +44,31 @@ var menu = __WEBPACK_IMPORTED_MODULE_3_react___default.a.createElement(
   { onSelect: onSelect },
   __WEBPACK_IMPORTED_MODULE_3_react___default.a.createElement(
     __WEBPACK_IMPORTED_MODULE_1_rc_menu__["b" /* Item */],
-    { disabled: true },
-    'disabled'
-  ),
-  __WEBPACK_IMPORTED_MODULE_3_react___default.a.createElement(
-    __WEBPACK_IMPORTED_MODULE_1_rc_menu__["b" /* Item */],
     { key: '1' },
-    'one'
+    __WEBPACK_IMPORTED_MODULE_3_react___default.a.createElement(
+      'a',
+      { href: '/' },
+      'one'
+    )
   ),
   __WEBPACK_IMPORTED_MODULE_3_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_rc_menu__["a" /* Divider */], null),
   __WEBPACK_IMPORTED_MODULE_3_react___default.a.createElement(
     __WEBPACK_IMPORTED_MODULE_1_rc_menu__["b" /* Item */],
     { key: '2' },
-    'two'
+    __WEBPACK_IMPORTED_MODULE_3_react___default.a.createElement(
+      'a',
+      { href: '/' },
+      'two'
+    )
+  ),
+  __WEBPACK_IMPORTED_MODULE_3_react___default.a.createElement(
+    __WEBPACK_IMPORTED_MODULE_1_rc_menu__["b" /* Item */],
+    { key: '3' },
+    __WEBPACK_IMPORTED_MODULE_3_react___default.a.createElement(
+      'a',
+      { href: '/' },
+      'three'
+    )
   )
 );
 
@@ -70,16 +82,24 @@ __WEBPACK_IMPORTED_MODULE_4_react_dom___default.a.render(__WEBPACK_IMPORTED_MODU
     __WEBPACK_IMPORTED_MODULE_3_react___default.a.createElement(
       __WEBPACK_IMPORTED_MODULE_0_rc_dropdown___default.a,
       {
-        trigger: ['click'],
+        trigger: ['focus'],
         overlay: menu,
         animation: 'slide-up',
-        onVisibleChange: onVisibleChange
+        onVisibleChange: onVisibleChange,
+        getPopupContainer: function getPopupContainer(trigger) {
+          return trigger;
+        }
       },
       __WEBPACK_IMPORTED_MODULE_3_react___default.a.createElement(
         'button',
         { style: { width: 100 } },
         'open'
       )
+    ),
+    __WEBPACK_IMPORTED_MODULE_3_react___default.a.createElement(
+      'button',
+      null,
+      'Close'
     )
   )
 ), document.getElementById('__react-content'));
