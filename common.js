@@ -34720,10 +34720,9 @@ var Trigger = function (_React$Component) {
     }
     if (this.isFocusToShow() || this.isBlurToHide()) {
       newChildProps.onFocus = this.onFocus;
-      newChildProps.onBlur = this.onBlur;
     } else {
-      // newChildProps.onFocus = this.createTwoChains('onFocus');
-      newChildProps.onBlur = this.createTwoChains('onBlur');
+      newChildProps.onFocus = this.createTwoChains('onFocus');
+      newChildProps.onBlur = this.onBlur;
     }
 
     var childrenClassName = __WEBPACK_IMPORTED_MODULE_11_classnames___default()(child && child.props && child.props.className, className);
@@ -34896,10 +34895,12 @@ var _initialiseProps = function _initialiseProps() {
   };
 
   this.onPopupFocus = function () {
+    console.log('onPopupFocus');
     _this5.clearDelayTimer();
   };
 
   this.onPopupBlur = function (e) {
+    console.log('onPopupBlur');
     // https://github.com/react-component/trigger/pull/13
     // react bug?
     console.log(e, _this5._component.getPopupDomNode(), Object(__WEBPACK_IMPORTED_MODULE_7_rc_util_es_Dom_contains__["a" /* default */])(_this5._component.getPopupDomNode(), e.relatedTarget));
@@ -35036,12 +35037,8 @@ var _initialiseProps = function _initialiseProps() {
     mouseProps.onMouseDown = _this5.onPopupMouseDown;
 
     var focusProps = {};
-    if (_this5.isFocusToShow()) {
-      focusProps.onFocus = _this5.onPopupFocus;
-    }
-    if (_this5.isBlurToHide) {
-      focusProps.onBlur = _this5.onPopupBlur;
-    }
+    focusProps.onFocus = _this5.onPopupFocus;
+    focusProps.onBlur = _this5.onPopupBlur;
 
     return __WEBPACK_IMPORTED_MODULE_4_react___default.a.createElement(
       __WEBPACK_IMPORTED_MODULE_13__Popup__["a" /* default */],

@@ -82,7 +82,7 @@ __WEBPACK_IMPORTED_MODULE_4_react_dom___default.a.render(__WEBPACK_IMPORTED_MODU
     __WEBPACK_IMPORTED_MODULE_3_react___default.a.createElement(
       __WEBPACK_IMPORTED_MODULE_0_rc_dropdown___default.a,
       {
-        trigger: ['focus'],
+        trigger: ['click'],
         overlay: menu,
         animation: 'slide-up',
         onVisibleChange: onVisibleChange,
